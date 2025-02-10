@@ -591,7 +591,7 @@ if (esign(vspeed+gravity,vflip)==vflip) {
     if (was_on_slope || is_going_into_slope) {
         x+=round_up(hspeed)
         if (place_free(x,y)) {
-            if (was_on_slope) if (instance_place(x,y+abs(hspeed)+6*vflip,Block)) {
+            if (was_on_slope) if (instance_place(x,y+(abs(hspeed)+6)*vflip,Block)) {
                 //land on solids moving down
                 //optimization: only check collision once it crosses pixel boundary
                 while (!instance_place(x,y+grav_step,Block)) {store_y=round(y) do y+=grav_step until round(y)!=store_y} y-=grav_step
