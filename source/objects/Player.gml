@@ -600,7 +600,7 @@ if (esign(vspeed+gravity,vflip)==vflip) {
         } else {
             //move up out of ground when walking up slope
             store_y=y
-            move_outside_solid(180-90*vflip,6)
+            move_outside_solid(180-90*vflip,abs(hspeed)+6)
             if (!place_free(x,y)) {
                 //couldn't move out, so it's probably a wall
                 //move back down
