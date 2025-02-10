@@ -98,7 +98,7 @@ applies_to=self
 
 //credits to voraciousreader for the "flower" motion type + num/max_num distinction
 
-/*preview
+/*preview nodrawself
     var i,ct,r,a;
 
     if (!FieldDefined("motion_type")|| !FieldDefined("num")) {
@@ -121,11 +121,11 @@ applies_to=self
             }break
             case "chaotic": {
                 r=radius
-                a=360*dsin(a)
+                a=360*dsin(ct*360)
             }break
             case "stutter": {
                 r=radius
-                a=ct*360+30*dsin(a*num)
+                a=ct*360+30*dsin(ct*360*num)
             }break
             case "flower": {
                 r=radius*(1+sin(time*pi*2*flower_length))/2
@@ -140,8 +140,8 @@ applies_to=self
         if (!FieldDefined("sprite")) draw_sprite(Sprite("sprCherry"),0,x+lengthdir_x(r,a+initial_angle),y+lengthdir_y(r,a+initial_angle))
         else draw_sprite(Sprite(Field("sprite"),0),0,x+lengthdir_x(r,a+initial_angle),y+lengthdir_y(r,a+initial_angle))
     }
-    if (Field("cycle_length")>0) draw_sprite_ext(Sprite("sprSpinner"),0,x,y,1,1,a+initial_angle,c_white,1)
-    else draw_sprite_ext(Sprite("sprSpinner"),0,x,y,1,-1,a+initial_angle,c_white,1)
+    if (Field("cycle_length")>0) draw_sprite_ext_fixed(Sprite("sprSpinner"),0,x,y,1,1,a+initial_angle,c_white,1)
+    else draw_sprite_ext_fixed(Sprite("sprSpinner"),0,x,y,1,-1,a+initial_angle,c_white,1)
 */
 
 if (max_num==noone) max_num=num
