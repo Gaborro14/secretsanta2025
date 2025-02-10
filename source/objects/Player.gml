@@ -649,7 +649,7 @@ if (dotkid) {
 //so we add gravity before checking for collisions
 vspeed+=gravity
 
-if (!place_free(x+round_up(hspeed),y+round_up(vspeed))) {
+if (!place_free(x+round_up(hspeed),y+vspeed)) {
     //there is a collision
     if (!place_free(x+round_up(hspeed),y)) {
         //check for collision horizontally first
@@ -668,7 +668,7 @@ if (!place_free(x+round_up(hspeed),y+round_up(vspeed))) {
         walljumpboost=0
     }
 
-    if (!place_free(x,y+round_up(vspeed))) {
+    if (!place_free(x,y+vspeed)) {
         //check for collision vertically
         a=ceil(abs(vspeed))
         s=sign(vspeed)
