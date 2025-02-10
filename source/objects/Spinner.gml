@@ -107,6 +107,7 @@ applies_to=self
     }
 
     if (!FieldDefined("max_num")) max_num=num
+    max_num=max(max_num,num)
 
     if (cycle_length==0) time=0
     else time=(current_time/16)/(cycle_length*50)
