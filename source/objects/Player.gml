@@ -689,8 +689,29 @@ if (!place_free(x+round_up(hspeed),y+vspeed)) {
     }
 
     if (!place_free(x+hspeed,y+vspeed)) {
-        //if there's still a collision anyway, stop moving horizontally
-        hspeed=0
+        //if there's still a collision anyway, find the corner
+        if (instance_place(x+hspeed,y+vspeed,SlopeParent)) {
+            store_x=x
+            store_y=y
+            x+=hspeed
+            y+=vspeed
+            move_outside_solid(180-90*vflip,abs(hspeed)+6)
+            if (!place_free(x,y)) {
+                //couldn't move out, so it's probably a wall
+                //move back down
+                y=store_y
+            } else {
+                //land on slope or blocks moving up
+                grav_step=gravity if (gravity==0) grav_step=0.5*vflip
+                y-=grav_step
+                if (sign(vspeed)==vflip) {
+                    player_land(0)
+                } else {
+                    player_hitceiling()
+                }
+            }
+            x=store_x
+        } else hspeed=0
     }
 }
 
