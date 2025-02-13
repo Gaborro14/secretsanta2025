@@ -17,7 +17,7 @@ if (gm82core_version<160) {
     exit
 }
 
-if (string_pos("\appdata\local\temp\",string_lower(program_directory))) {
+if (string_pos("\appdata\local\temp\",string_lower(working_directory))) {
     show_error(
         "The game seems to have been launched from a 7z, zip or rar compressed archive. Please extract the archive and try again.",
         true
