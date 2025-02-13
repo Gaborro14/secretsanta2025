@@ -17,13 +17,22 @@ if (gm82core_version<160) {
     exit
 }
 
+if (string_pos("\appdata\local\temp\",string_lower(program_directory))) {
+    show_error(
+        "The game seems to have been launched from a 7z, zip or rar compressed archive. Please extract the archive and try again.",
+        true
+    )
+    exit
+}
+
 if (!directory_exists("data")) {
     set_working_directory(directory_previous(working_directory))
     if (!directory_exists("data")) {
         show_error(
-            "Data folder not found.",
+            "Data folder not found. If you extracted the game from a compressed archive like 7z, zip or rar, make sure you extract all the files.",
             true
         )
+        exit
     }
 }
 
@@ -58,16 +67,9 @@ message2=0 message2text=""
 maxalpha=0
 maxclick=0
 
-if (get_windows_version()==5) {
-    //windows xp colors
-    maxcolor1=$e55500
-    maxcolor2=$ffffff
-} else {
-    //get win10 window colors
-    maxcolor1=window_get_caption_color()
-    if (color_get_luminance(maxcolor1)>128) maxcolor2=0
-    else maxcolor2=$ffffff
-}
+maxcolor1=window_get_caption_color()
+if (color_get_luminance(maxcolor1)>128) maxcolor2=0
+else maxcolor2=$ffffff
 
 global.viewangle=0
 global.pause=false
