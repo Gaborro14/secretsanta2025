@@ -17,23 +17,29 @@ if (gm82core_version<160) {
     exit
 }
 
-if (string_pos("\appdata\local\temp\",string_lower(working_directory))) {
-    show_error(
-        "The game seems to have been launched from a 7z, zip or rar compressed archive. Please extract the archive and try again.",
-        true
-    )
-    exit
-}
+is_in_temp=string_pos("\appdata\local\temp\",string_lower(working_directory))
 
+no_data=false
 if (!directory_exists("data")) {
     set_working_directory(directory_previous(working_directory))
     if (!directory_exists("data")) {
+        no_data=true
+    }
+}
+
+if (is_in_temp) {
+    if (no_data) {
         show_error(
-            "Data folder not found. If you extracted the game from a compressed archive like 7z, zip or rar, make sure you extract all the files.",
+            "The game seems to have been launched from a 7z, zip or rar compressed archive. Please extract the archive and try again.",
             true
         )
         exit
     }
+} else if (no_data) {
+    show_error(
+        "Data folder not found. If you extracted the game from a compressed archive like 7z, zip or rar, make sure you extract all the files.",
+        true
+    )
 }
 
 io_set_roomend_clear(0)
