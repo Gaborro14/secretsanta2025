@@ -23,7 +23,7 @@ d3d_model_primitive_begin(m1,pr_trianglestrip)
 d3d_model_primitive_begin(m2,pr_trianglestrip)
 u=0 w=bbox_right-bbox_left
 bottom=bbox_bottom+1
-repeat (w+1) {
+repeat ((w)/precision+1) {
     if (u!=0) {
         i=instance_create(px-precision/2,py,SlopePixel)
         i.image_xscale=precision
