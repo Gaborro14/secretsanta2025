@@ -214,7 +214,7 @@ applies_to=self
 ///yoshi mount condition
 
 if (!other.dotkid && other.vflip==vflip && other.vspeed*other.vflip>0 && !dead && !lost) {
-    vehicle_mount()
+    vehicle_mount(other.id,0)
 }
 #define Collision_PlayerKiller
 /*"/*'/**//* YYD ACTION
