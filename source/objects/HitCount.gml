@@ -19,9 +19,7 @@ sound="sndBossHit" //sound to play when player is damaged
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=605
-invert=0
-arg0=no draw
+action_id=425
 */
 #define Trigger_Draw GUI
 /*"/*'/**//* YYD ACTION
