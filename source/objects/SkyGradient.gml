@@ -24,7 +24,7 @@ applies_to=self
     else draw_rectangle_color(0,0,roomwidth,roomheight,Field("col1"),Field("col2"),Field("col3"),Field("col4"),0)
     draw_self()
 */
-#define Other_10
+#define Trigger_Draw Beneath
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
