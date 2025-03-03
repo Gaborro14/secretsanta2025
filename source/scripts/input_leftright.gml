@@ -1,8 +1,8 @@
 ///input_leftright(left,right,leftpressed,rightpressed,leftreleased,rightreleased,old)
 var l,r,h;
 
-l=(argument0 || argument2) && !argument4
-r=(argument1 || argument3) && !argument5
+l=(argument0 || argument2)
+r=(argument1 || argument3)
 
 if (r && l) {
     switch (settings("l+r behavior")) {
