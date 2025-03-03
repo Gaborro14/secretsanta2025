@@ -197,7 +197,7 @@ input_leftright
 input_disable
 input_enable
 autotile_type
-draw_before_backgrounds
+
 autotile
 sound_set_music_volume
 sound_set_sfx_volume
@@ -221,7 +221,7 @@ camera_get_smooth
 camera_get_borders
 input_anykey_pressed
 trigger_broadcast
-update_triggers
+
 timeline_miku
 wait_timer
 sound_play_synced
@@ -343,3 +343,8 @@ camera_get_smooth_rate
 round_up
 opt_pausesounds
 opt_celeste
+
+
+envelope_begin_frame
+custom_postprocessing
+update_addtriggers

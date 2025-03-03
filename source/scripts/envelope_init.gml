@@ -27,10 +27,10 @@ global.APPfilter=false
 //always execute last, which prevents "mystery issues".
 o=object_add()
 object_event_add(o,ev_step,ev_step_end,
-    script_get_name(update_triggers)+"() with ("+string(World)+") {"+script_get_name(envelope_prepare)+"() "+script_get_name(fix_backgrounds)+"()}"
+    script_get_name(envelope_begin_frame)+"()"
 )
 object_event_add(o,ev_other,ev_animation_end,
-    "with ("+string(World)+") "+script_get_name(envelope_compose)+"()"
+    script_get_name(envelope_compose)+"()"
 )
 object_event_add(o,ev_other,ev_room_start,
     "set_automatic_draw(false) alarm[0]=1"
@@ -39,7 +39,7 @@ object_event_add(o,ev_alarm,0,
     "set_automatic_draw(true)"
 )
 object_event_add(o,ev_step,ev_step_normal,
-    script_get_name(update_triggers)+"()"
+    script_get_name(update_addtriggers)+"()"
 )
 object_set_persistent(o,1)
 object_set_parent(o,ActiveParent)

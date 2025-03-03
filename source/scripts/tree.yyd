@@ -47,6 +47,7 @@
 	|custom_window_border
 	|custom_instance_activation
 	|gm82room_jtool_table
+	|custom_postprocessing
 +saving
 	|savedata_init
 	|settings_default
@@ -122,6 +123,7 @@
 	+rendering
 		|envelope_init
 		|envelope_prepare
+		|envelope_begin_frame
 		|envelope_compose
 		|update_fullscreen
 		|take_screenshot
@@ -132,7 +134,6 @@
 		|draw_sign_text
 		|draw_text_outline
 		|draw_sprite_hueshift
-		|draw_before_backgrounds
 	+GUI
 		|display_set_gui_size
 		|display_set_gui_maximise
@@ -166,21 +167,21 @@
 	|autotile
 	|construct
 	|trigger_broadcast
-	|update_triggers
 	|addtrigger_vars
 	|draw_window_caption
 	|set_game_speed
 	|check_engine_parenting
+	|update_addtriggers
 +world events
 	|event_game_start
 	|event_room_start
+	|event_room_end
 	|event_world_earlystep
 	|event_world_step
 	|event_world_endstep
 	|event_world_drawend
 	|event_debug_gui
 	|event_draw_gui
-	|event_room_end
 	|event_game_end
 	|event_camera_update
 +player
