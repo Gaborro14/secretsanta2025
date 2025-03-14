@@ -150,6 +150,11 @@
 		|instance_deactivate_all_safe
 		|instance_activate_all_safe
 		|instance_activate_around
+	+autotiler
+		|autotile_type
+		|autotile
+		|autotile_corner
+		|autotile_ext_place
 	|add_difficulty
 	|add_gizmo
 	|update_caption_deathtime
@@ -163,8 +168,6 @@
 	|move_player_object
 	|profiler_setup
 	|room_find
-	|autotile_type
-	|autotile
 	|construct
 	|trigger_broadcast
 	|addtrigger_vars

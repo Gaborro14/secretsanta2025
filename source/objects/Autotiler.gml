@@ -22,7 +22,7 @@ Note however, that this can be pretty slow if you have thousands of tiles.
 When using "clone" mode, place the desired tile underneath the object.
 */
 
-//field type: enum("border","grass","pipes","clone","clone scale") - default grass
+//field type: enum("border","grass","pipes","clone","clone scale","extended") - default grass
 //field tileset: background
 //field grid - default 32
 //field depth - default 1000
