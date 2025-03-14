@@ -348,3 +348,5 @@ opt_celeste
 envelope_begin_frame
 custom_postprocessing
 update_addtriggers
+autotile_ext_place
+autotile_corner
