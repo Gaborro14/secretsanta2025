@@ -43,6 +43,7 @@ if (is_in_temp) {
 }
 
 io_set_roomend_clear(0)
+window_set_dpiaware()
 
 gameclosing=0
 scheduled_close_button=0
