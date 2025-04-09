@@ -24,7 +24,7 @@ applies_to=self
 draw_set_font(fntGameover)
 draw_set_halign(1)
 draw_text_transformed_color(x,y-105,"GAME OVER",4.5,4.5,0,image_blend,image_blend,image_blend,image_blend,image_alpha)
-draw_text_color(x,y+45,"PRESS ´"+key_restart(vi_keyname)+"´ TO TRY AGAIN",image_blend,image_blend,image_blend,image_blend,image_alpha)
+draw_text_color(x,y+45,"PRESS Â´"+key_restart(vi_keyname)+"Â´ TO TRY AGAIN",image_blend,image_blend,image_blend,image_blend,image_alpha)
 draw_set_halign(0)
 draw_sprite_tiled_extra(sprDefaultGameOverLine,0,x-47*8,y+35,1,1,0,image_blend,image_alpha,94,1)
 draw_set_font(fntFileSmall)
