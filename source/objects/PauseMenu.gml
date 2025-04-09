@@ -168,8 +168,8 @@ var batt_info,batt_status;
 batt_info=""
 batt_status=get_battery_status()
 if (batt_status) {
-    batt_info=lang("battery")+string(get_battery_level())
-    if (batt_status==2) batt_info+="("+lang("battery charge")+")"
+    batt_info=lang("battery")+": "+string(get_battery_level())+"%"
+    if (batt_status==2) batt_info+=" ("+lang("battery charge")+")"
 }
 
 draw_set_valign(2)
