@@ -1,6 +1,6 @@
 sprController
 sprFileBorder
-sprGameOver
+
 sprSaveMedium
 sprSaveHard
 sprSaveVeryHard
@@ -425,3 +425,4 @@ sprSpinner
 sprSpinnerHitbox
 sprCameraRoomViewer
 sprVLineFlipper
+sprDefaultGameOverLine

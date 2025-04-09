@@ -4,7 +4,6 @@
 	|spr2x2
 	|spr1x2
 	|sprFileBorder
-	|sprGameOver
 	|sprCamera
 	|sprCameraFull
 	|sprMusic
@@ -38,6 +37,7 @@
 	|sprSpinner
 	|sprSpinnerHitbox
 	|sprCameraRoomViewer
+	|sprDefaultGameOverLine
 +Player
 	|sprMaskPlayer
 	|sprMaskPlayerFlip
