@@ -164,6 +164,49 @@ if (type="border") {
     }
 }
 
+if (type="extended") {
+    //extended "ung-style" tile type
+    var half_grid; half_grid = grid / 2
+    var auto;
+
+
+    with (Block) if (object_index==Block && solid && image_angle==0 && bbox_right>0 && bbox_bottom>0 && bbox_left<room_width && bbox_top<room_height) {
+        uu=min(sprite_width div grid,(room_width-bbox_left) div grid)
+        vv=min(sprite_height div grid,(room_height-bbox_top) div grid)
+        u=max(0,bbox_left div grid); repeat (uu) {v=max(0,bbox_top div grid); repeat (vv) {
+            u+=1; v+=1
+            c1 = tilemap[u - 1, v - 1]
+            c2 = tilemap[u    , v - 1]
+            c3 = tilemap[u + 1, v - 1]
+            c4 = tilemap[u - 1, v    ]
+            c5 = tilemap[u    , v    ]
+            c6 = tilemap[u + 1, v    ]
+            c7 = tilemap[u - 1, v + 1]
+            c8 = tilemap[u    , v + 1]
+            c9 = tilemap[u + 1, v + 1]
+            u-=1; v-=1
+
+            //top left
+            auto = autotile_corner(c4, c2, c1)
+            autotile_ext_place(auto, 0, 0, u, v, grid)
+            //top right
+            auto = autotile_corner(c6, c2, c3)
+            autotile_ext_place(auto, half_grid, 0, u, v, grid)
+            //bottom left
+            auto = autotile_corner(c4, c8, c7)
+            autotile_ext_place(auto, 0, half_grid, u, v, grid)
+            //bottom right
+            auto = autotile_corner(c6, c8, c9)
+            autotile_ext_place(auto, half_grid, half_grid, u, v, grid)
+        v+=1}u+=1}
+        if (autotile_vertcount>=30000) {
+            d3d_model_primitive_end(autotile_model)
+            d3d_model_primitive_begin(autotile_model,pr_trianglelist)
+            autotile_vertcount=0
+        }
+    }
+}
+
 d3d_model_primitive_end(autotile_model)
 
 return autotile_model
