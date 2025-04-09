@@ -29,6 +29,7 @@ for (file=file_find_first(folders[0]+"*",fa_directory);file!="";file=file_find_n
     }
 } file_find_close()
 
+//load sfx
 repeat (c) {c-=1
     //sfx (uncompressed, multi instance)
     sound_add_directory(folders[c],".wav",0,1)
@@ -46,26 +47,35 @@ for (file=file_find_first(folders[0]+"*",fa_directory);file!="";file=file_find_n
     }
 } file_find_close()
 
+//setup music extensions to search
+music_extensions[ 0]=".ogg"
+music_extensions[ 1]=".mp3"
+music_extensions[ 2]=".mod"
+music_extensions[ 3]=".s3m"
+music_extensions[ 4]=".it"
+music_extensions[ 5]=".xm"
+music_extensions[ 6]=".mid"
+music_extensions[ 7]=".midi"
+music_extensions[ 8]=".wma"
+music_extensions[ 9]=".aif"
+music_extensions[10]=".flac"
+//note that we do not load wav from the music folder on purpose
+music_count=11
+
+//load music
 repeat (c) {c-=1
     //music (compressed, streamed, single instance)
-    sound_add_directory(folders[c],".ogg",1,1)
-    sound_add_directory(folders[c],".mp3",1,1)
-    sound_add_directory(folders[c],".mod",1,1)
-    sound_add_directory(folders[c],".s3m",1,1)
-    sound_add_directory(folders[c],".mid",1,1)
-    sound_add_directory(folders[c],".midi",1,1)
+    i=0 repeat (music_count) {
+        sound_add_directory(folders[c],music_extensions[i],1,1)
+    i+=1}
 }
 
 //load avoidance folder as double streams
-sound_add_directory_ext(avoid_dir,".ogg",1,1,"layer1_")
-sound_add_directory_ext(avoid_dir,".ogg",1,1,"layer2_")
-sound_add_directory_ext(avoid_dir,".mp3",1,1,"layer1_")
-sound_add_directory_ext(avoid_dir,".mp3",1,1,"layer2_")
-sound_add_directory_ext(avoid_dir,".mod",1,1,"layer1_")
-sound_add_directory_ext(avoid_dir,".mod",1,1,"layer2_")
-sound_add_directory_ext(avoid_dir,".s3m",1,1,"layer1_")
-sound_add_directory_ext(avoid_dir,".s3m",1,1,"layer2_")
+i=0 repeat (music_count) {
+    sound_add_directory_ext(avoid_dir,music_extensions[i],1,1,"layer1_")
+    sound_add_directory_ext(avoid_dir,music_extensions[i],1,1,"layer2_")
+i+=1}
 
+//load some extra data to setup music
 custom_music_effects()
-
 custom_sound_properties()
