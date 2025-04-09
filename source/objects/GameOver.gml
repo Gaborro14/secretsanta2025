@@ -28,6 +28,11 @@ draw_text_color(x,y+45,"PRESS ´"+key_restart(vi_keyname)+"´ TO TRY AGAIN",imag
 draw_set_halign(0)
 draw_sprite_tiled_extra(sprDefaultGameOverLine,0,x-47*8,y+35,1,1,0,image_blend,image_alpha,94,1)
 draw_set_font(fntFileSmall)
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=425
+*/
 #define Trigger_Draw GUI
 /*"/*'/**//* YYD ACTION
 lib_id=1
