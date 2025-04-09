@@ -55,7 +55,7 @@ applies_to=self
 if (persistent && warpsound!="") {
     //we are coming from a previous room, and we have to play a sound
     sound_play_auto(warpsound)
-    instance_destroy()
+    if (object_index!=FadeWarp) instance_destroy()
 } else {
     if (warpToPlayerstart)
         if (warpToPlayerstart.object_index!=PlayerStart)
