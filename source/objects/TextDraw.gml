@@ -12,6 +12,7 @@ xscale=1.0
 yscale=1.0
 halign=0
 valign=0
+filter=false
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -34,6 +35,7 @@ Rotation, scale and blend are applied to the text.
 //field font: font
 //field halign: enum(fa_left,fa_center,fa_right)
 //field valign: enum(fa_top,fa_middle,fa_bottom)
+//field filter: false - use bilinear filtering
 
 /*preview
     if (!FieldDefined("text")) exit
@@ -43,7 +45,12 @@ Rotation, scale and blend are applied to the text.
     draw_set_alpha(image_alpha)
     draw_set_halign(halign)
     draw_set_valign(valign)
+    if (filter) {
+        i=texture_get_interpolation()
+        texture_set_interpolation(1)
+    }
     draw_text_transformed(x,y,text,image_xscale,image_yscale,image_angle)
+    if (filter) texture_set_interpolation(i)
     draw_set_color($ffffff)
     draw_set_alpha(1)
     draw_set_halign(0)
@@ -137,8 +144,13 @@ draw_set_color(image_blend)
 draw_set_alpha(image_alpha)
 draw_set_halign(halign)
 draw_set_valign(valign)
+if (filter) {
+    i=texture_get_interpolation()
+    texture_set_interpolation(1)
+}
 if (xscale==1 && yscale==1 && angle=0) draw_text(x,y,text)
 else draw_text_transformed(x,y,text,xscale,yscale,angle)
+if (filter) texture_set_interpolation(i)
 draw_set_color($ffffff)
 draw_set_alpha(1)
 draw_set_halign(0)
