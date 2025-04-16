@@ -50,12 +50,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (input_anykey()) {
-    room_speed=memspd
-    image_speed=0.2
-    alarm[0]=room_speed
-}
-
 if (sel!=-1) {
     script_execute(ds_list_find_value(optlist,sel),opt_end)
 }
