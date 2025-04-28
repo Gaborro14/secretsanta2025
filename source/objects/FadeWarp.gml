@@ -23,6 +23,7 @@ applies_to=self
 */
 if (room!=roomTo && fadestate==0) {
     fadestate=1
+    persistent=1
     lock_controls()
     freeze_player()
 }
