@@ -64,6 +64,8 @@ if (!instance) {
 y=ystart
 
 addtrigger_vars()
+
+if (trigger_on_create) event_trigger(tr_traptriggered)
 #define Other_8
 /*"/*'/**//* YYD ACTION
 lib_id=1
