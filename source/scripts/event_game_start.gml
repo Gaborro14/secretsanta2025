@@ -73,6 +73,7 @@ message2=0 message2text=""
 
 maxalpha=0
 maxclick=0
+maxhover=0
 
 maxcolor1=window_get_caption_color()
 if (color_get_luminance(maxcolor1)>128) maxcolor2=0
