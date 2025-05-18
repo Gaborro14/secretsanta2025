@@ -4,7 +4,10 @@
 
 globalvar macro_updown_last;
 
-if (argument_count==0) return input_leftright(key_up(),key_down(),key_up(vi_pressed),key_down(vi_pressed),key_up(vi_released),key_down(vi_released),macro_updown_last)
+if (argument_count==0) {
+    macro_updown_last=input_leftright(key_up(),key_down(),key_up(vi_pressed),key_down(vi_pressed),key_up(vi_released),key_down(vi_released),macro_updown_last)
+    return macro_updown_last
+}
 
 if (argument[0]==vi_pressed) return key_down(vi_pressed)-key_up(vi_pressed)
 
