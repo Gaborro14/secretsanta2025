@@ -120,15 +120,12 @@ if (move_to_xy_grav[0]!=noone && move_to_xy_grav[1]!=noone && move_grav>0) {
     }
 }
 
-var coll;coll=noone
-coll=instance_place(x+hspeed,y+vspeed,TrapStop)
-
-if (coll) if (trap_stop_index==coll.index) {
+with (TrapStop) if (other.trap_stop_index==index) if (instance_place(x-other.hspeed,y-other.vspeed,other.id)) with (other) {
     x+=hspeed y+=vspeed
-    if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,coll)) break}
-    if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,coll)) break}
-    if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,coll)) break}
-    if (vspeed<0) repeat (ceil(-vspeed)) {y+=1 if (!instance_place(x,y,coll)) break}
+    if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,other.id)) break}
+    if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,other.id)) break}
+    if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,other.id)) break}
+    if (vspeed<0) repeat (ceil(-vspeed)) {y+=1 if (!instance_place(x,y,other.id)) break}
 
     speed=0
 
@@ -150,36 +147,34 @@ if (coll) if (trap_stop_index==coll.index) {
     }
 }
 
-coll=instance_place(x+hspeed,y+vspeed,TrapRedirect)
-
-if (coll) if (trap_redir_index==coll.index) {
+with (TrapRedirect) if (other.trap_redir_index==index) if (instance_place(x-other.hspeed,y-other.vspeed,other.id)) with (other) {
     x+=hspeed y+=vspeed
-    if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,coll)) break}
-    if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,coll)) break}
-    if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,coll)) break}
-    if (vspeed<0) repeat (ceil(-vspeed)) {y+=1 if (!instance_place(x,y,coll)) break}
+    if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,other.id)) break}
+    if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,other.id)) break}
+    if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,other.id)) break}
+    if (vspeed<0) repeat (ceil(-vspeed)) {y+=1 if (!instance_place(x,y,other.id)) break}
 
-    gravity=coll.grav
-    if (coll.hsp==0 && coll.vsp==0 && coll.spd==0 && coll.dir==0) {
+    gravity=other.grav
+    if (other.hsp==0 && other.vsp==0 && other.spd==0 && other.dir==0) {
         hspeed*=-1
         vspeed*=-1
-    } else if (coll.spd==0 && coll.dir==0) {
-        hspeed=coll.hsp
-        vspeed=coll.vsp
-    } else if (coll.hsp==0 && coll.vsp==0) {
-        speed=coll.spd
-        direction=coll.dir
+    } else if (other.spd==0 && other.dir==0) {
+        hspeed=other.hsp
+        vspeed=other.vsp
+    } else if (other.hsp==0 && other.vsp==0) {
+        speed=other.spd
+        direction=other.dir
     } else {
-        speed=coll.spd
-        direction=coll.dir
-        hspeed+=coll.hsp
-        vspeed+=coll.vsp
+        speed=other.spd
+        direction=other.dir
+        hspeed+=other.hsp
+        vspeed+=other.vsp
     }
 }
 
-coll=instance_place(x+hspeed,y+vspeed,TrapDestroy)
-
-if (coll) if (trap_destroy_index==coll.index) instance_destroy()
+with (TrapDestroy) if (other.trap_destroy_index==index) if (instance_place(x-other.hspeed,y-other.vspeed,other.id)) with (other) {
+    instance_destroy()
+}
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
