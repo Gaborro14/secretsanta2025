@@ -302,6 +302,7 @@
 +shaders
 	+system
 		|shaders_init
+		|vertex_helper_poscol
 		|unpack_shader
 	+packed shaders
 		+simple effects
