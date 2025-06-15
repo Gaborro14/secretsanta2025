@@ -13,6 +13,7 @@ applies_to=self
 ambient_light=0
 
 block_model=d3d_model_create()
+block_margin=0
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -31,9 +32,8 @@ draw_clear_alpha(color_inverse(ambient_light),1)
 surface_reset_target()
 
 d3d_model_clear(block_model)
-
-with (Block) if (inside_view()) event_perform_object(LightingCtrl,ev_other,ev_user0)
-with (ShadowVolume) if (inside_view()) event_perform_object(LightingCtrl,ev_other,ev_user0)
+with (Block) if (inside_view(other.block_margin)) event_perform_object(LightingCtrl,ev_other,ev_user0)
+with (ShadowVolume) if (inside_view(other.block_margin)) event_perform_object(LightingCtrl,ev_other,ev_user0)
 
 with (Light) if (
     x+range>view_xview
@@ -71,7 +71,7 @@ shader_vertex_reset()
 shader_pixel_set(global.lighting_blur_pshader)
 texture_set_interpolation(1)
 d3d_set_alphablend(0)
-i=1 repeat (2) {
+i=1 repeat (3) {
     surface_set_target(surf1)
     shader_pixel_uniform_f("resolution",0,i/h)
     draw_surface(surf2,0,0)
@@ -90,6 +90,7 @@ action_id=603
 applies_to=self
 */
 //field ambient_light: color
+//field block_margin: number
 #define Other_5
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -107,19 +108,24 @@ action_id=603
 applies_to=self
 */
 ///used by blocks to cast shadows
-var mdl,sw,sh,x2,y2,x3,y3,x4,y4;
+var mdl,sw,sh,x2,y2,x3,y3,x4,y4,lwx,lwy,lhx,lhy;
 
 mdl=LightingCtrl.block_model
 
 sw=image_xscale*sprite_get_width(sprite_index)
 sh=image_yscale*sprite_get_height(sprite_index)
 
-x4=x+lengthdir_x(sh,image_angle-90)
-y4=y+lengthdir_y(sh,image_angle-90)
-x2=x+lengthdir_x(sw,image_angle)
-y2=y+lengthdir_y(sw,image_angle)
-x3=x+pivot_pos_x(sw,sh,image_angle)
-y3=y+pivot_pos_y(sw,sh,image_angle)
+lwx=lengthdir_x(sw,image_angle)
+lwy=lengthdir_y(sw,image_angle)
+lhx=lengthdir_x(sh,image_angle-90)
+lhy=lengthdir_y(sh,image_angle-90)
+
+x4=x+lhx
+y4=y+lhy
+x2=x+lwx
+y2=y+lwy
+x3=x+lwx+lhx
+y3=y+lwy+lhy
 
 d3d_model_primitive_begin(mdl,pr_trianglestrip)
     d3d_model_vertex_color(mdl,x ,y ,0,0,1)
@@ -131,7 +137,6 @@ d3d_model_primitive_begin(mdl,pr_trianglestrip)
     d3d_model_vertex_color(mdl,x4,y4,0,0,1)
     d3d_model_vertex_color(mdl,x4,y4,0,0,0)
     d3d_model_vertex_color(mdl,x ,y ,0,0,1)
-    d3d_model_vertex_color(mdl,x ,y ,0,0,0)
     d3d_model_vertex_color(mdl,x ,y ,0,0,0)
     d3d_model_vertex_color(mdl,x2,y2,0,0,0)
     d3d_model_vertex_color(mdl,x4,y4,0,0,0)
