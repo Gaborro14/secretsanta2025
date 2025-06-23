@@ -443,7 +443,7 @@ if (!vvvvvv) if (!onGround || global.floor_vines) {
         vspeed=2*vflip
 
         //eat djump when maker vines is disabled
-        if (key_jump(vi_pressed) && !global.maker_vines) {
+        if (key_jump(vi_pressed) && !(global.maker_vines and settings("makervine"))) {
             if (onPlatform) {
                 djump=1
                 walljump=2
@@ -456,7 +456,7 @@ if (!vvvvvv) if (!onGround || global.floor_vines) {
         //input away from the vine
         if (onVineL && key_right(vi_pressed))
         or (onVineR && key_left(vi_pressed))
-        or (key_jump(vi_pressed) && global.maker_vines) {
+        or (key_jump(vi_pressed) && (global.maker_vines and settings("makervine"))) {
             hang=false
             onVineL=false
             onVineR=false
