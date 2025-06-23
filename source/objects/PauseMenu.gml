@@ -22,7 +22,7 @@ if (settings("pause sounds")) sound_pause_all()
 //options
 xdraw=60
 ydraw=100
-xsep=300
+xsep=400
 ysep=24
 
 angle=0

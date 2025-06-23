@@ -7,15 +7,16 @@ settings("l+r behavior",lr_right)
 
 settings("blood",3)
 settings("filter",1)
-settings("anim",1)
+settings("anim",true)
 
-settings("valign",1)
+settings("makervine",true)
+settings("valign",true)
 settings("shakeamount",1)
 
 settings("stereomode",true)
 
 settings("screenscale",1)
 
-settings("caption visible",1)
+settings("caption visible",true)
 
 input_default()
