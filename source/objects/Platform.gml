@@ -118,6 +118,6 @@ if (sprite_index=sprDynamicPlatform && global.platform_9slice) {
     } else {
         //i feel like renex has better things to do with their time than make an
         //auto platform script that only like, 2 people will use for practical uses
-        draw_sprite_9slice(sprPlatform9slice,0,x,y,sprite_width,sprite_height,1,1,image_angle,image_blend,image_alpha,16,16,32,32)
+        draw_sprite_9slice(sprPlatform9slice,0,x,y,sprite_width,sprite_height,1,1,image_angle,image_blend,image_alpha,16,16,32,32,1)
     }
 } else if (sprite_index!=-1) draw_self()
