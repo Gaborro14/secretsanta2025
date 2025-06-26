@@ -134,7 +134,7 @@
 	+drawing
 		|draw_sign_text
 		|draw_text_outline
-		|draw_sprite_hueshift
+		|draw_sprite_9slice
 	+GUI
 		|display_set_gui_size
 		|display_set_gui_maximise
@@ -316,6 +316,7 @@
 			|ps2_blur
 		|vs3_snow
 		|ps3_snow
+		|ps2_9slice
 	|shader_hueshift
 	|shader_tint
 	|shader_rainbow

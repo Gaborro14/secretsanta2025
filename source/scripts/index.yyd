@@ -96,7 +96,7 @@ skin_telekid
 skin_vvvvvv
 skin_dotkid
 instance_deactivate_all_safe
-draw_sprite_hueshift
+
 inside_view
 
 custom_instance_activation
@@ -352,3 +352,6 @@ autotile_ext_place
 autotile_corner
 opt_makervine
 vertex_helper_poscol
+
+draw_sprite_9slice
+ps2_9slice
