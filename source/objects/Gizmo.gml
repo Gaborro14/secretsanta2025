@@ -170,6 +170,8 @@ with (TrapRedirect) if (other.trap_redir_index==index) if (instance_place(x-othe
         hspeed+=other.hsp
         vspeed+=other.vsp
     }
+
+    if (other.sound!="") sound_play_auto(other.sound)
 }
 
 with (TrapDestroy) if (other.trap_destroy_index==index) if (instance_place(x-other.hspeed,y-other.vspeed,other.id)) with (other) {
