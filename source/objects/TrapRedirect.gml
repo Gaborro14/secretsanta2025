@@ -23,6 +23,7 @@ dir=0
 grav=0
 index=0
 sound=""
+soundPlayOnce=false
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -40,3 +41,4 @@ By default, any trap that touches it will bounce off.
 //field grav: number
 //field index: number
 //field sound: string
+    //field soundPlayOnce: false
