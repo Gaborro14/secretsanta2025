@@ -49,8 +49,8 @@ global.release_mode=false
 
 //difficulties
     //difficulty options:
-    add_difficulty("Medium",false,false)
-    add_difficulty("Hard",true,false)
+    add_difficulty("Medium",true,false)
+    add_difficulty("Hard",false,false)
     add_difficulty("Very Hard",false,false)
     add_difficulty("Impossible",false,true)
 
