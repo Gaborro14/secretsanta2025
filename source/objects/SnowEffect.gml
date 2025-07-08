@@ -9,18 +9,18 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-time=(current_time/10) mod 200
+time=global.increment*2 mod 256
 
-xx=floorto(view_xview,200)-time
-yy=floorto(view_yview,200)-200+time
+xx=floorto(view_xview,256)-time
+yy=floorto(view_yview,256)-256+time
 
 shader_snow()
 
-u=xx repeat ceil(view_wview/200)+1 {
-    v=yy repeat ceil(view_hview/200)+1 {
+u=xx repeat ceil(view_wview/256)+1 {
+    v=yy repeat ceil(view_hview/256)+1 {
         shader_vertex_uniform_f("offset",u,v,-time/500,20)
         d3d_model_draw(global.snow_model,0,0,0,-1)
-    v+=200}
-u+=200}
+    v+=256}
+u+=256}
 
 shader_reset()

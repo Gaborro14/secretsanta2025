@@ -4,7 +4,7 @@ global.lighting_blur_pshader=unpack_shader(ps2_blur)
 
 global.snow_model=d3d_model_create()
 d3d_model_primitive_begin(global.snow_model,pr_pointlist)
-repeat (1000) d3d_model_vertex(global.snow_model,irandom(200),irandom(200),random(1))
+repeat (1000) d3d_model_vertex(global.snow_model,irandom(256),irandom(256),random(1))
 d3d_model_primitive_end(global.snow_model)
 d3d_model_bake(global.snow_model)
 
