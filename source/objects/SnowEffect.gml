@@ -9,12 +9,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-time=savedatap("time")
+time=(current_time/10) mod 200
 
-t=time mod 200
-
-xx=floorto(view_xview,200)-t
-yy=floorto(view_yview,200)-200+t
+xx=floorto(view_xview,200)-time
+yy=floorto(view_yview,200)-200+time
 
 shader_snow()
 
