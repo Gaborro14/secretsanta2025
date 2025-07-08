@@ -145,6 +145,8 @@ with (TrapStop) if (other.trap_stop_index==index) if (instance_place(x-other.hsp
         image_angle-=rotate
         rotating=false
     }
+
+    if (other.sound!="") sound_play_auto(other.sound)
 }
 
 with (TrapRedirect) if (other.trap_redir_index==index) if (instance_place(x-other.hspeed,y-other.vspeed,other.id)) with (other) {
@@ -175,6 +177,7 @@ with (TrapRedirect) if (other.trap_redir_index==index) if (instance_place(x-othe
 }
 
 with (TrapDestroy) if (other.trap_destroy_index==index) if (instance_place(x-other.hspeed,y-other.vspeed,other.id)) with (other) {
+    if (other.sound!="") sound_play_auto(other.sound)
     instance_destroy()
 }
 #define Other_0

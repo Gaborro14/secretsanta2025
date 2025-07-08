@@ -5,6 +5,7 @@ action_id=603
 applies_to=self
 */
 index=0
+sound=""
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -16,3 +17,4 @@ Destroys traps when they touch this object. Ignores any traps with a different d
 By default, any trap that touches it will be destroyed.
 */
 //field index: number
+//field sound: string
