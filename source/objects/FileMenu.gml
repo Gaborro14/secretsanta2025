@@ -21,7 +21,10 @@ if (global.savefile_thumbnails) {
     i=0 repeat (3) {
         savedata_select(i)
         fn=global.savefolder+global.savesig+".png"
-        if (file_exists(fn)) thumb[i]=background_add(fn,0,0)
+        if (file_exists(fn)) {
+            thumb[i]=background_add(fn,0,0)
+            if (!background_exists(thumb[i])) thumb[i]=noone
+        }
         i+=1
     }
 }
