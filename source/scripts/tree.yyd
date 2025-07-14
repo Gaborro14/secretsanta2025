@@ -176,6 +176,7 @@
 	|set_game_speed
 	|check_engine_parenting
 	|update_addtriggers
+	|difficulty_is_impossible
 +world events
 	|event_game_start
 	|event_room_start
