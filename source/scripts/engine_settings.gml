@@ -215,7 +215,8 @@ global.release_mode=false
     //changes whether the player is still affected by gravity in coyote time if it's enabled
     global.coyote_time_floating=false
     //time in frames to allow jumping when the button is pressed too early in the air
-    //makes 4.5s easier
+    //recommended to be set to 4 or below
+    //see debug visual with backspace
     global.jump_buffering=0
 
 

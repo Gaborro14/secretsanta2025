@@ -13,11 +13,17 @@ if (vvvvvv) {
     }
 } else if (!hang && !onVineL && !onVineR) {
     //get shape water type
-    var sw,swt;
+    var sw,swt,buffer_range;
     sw=instance_place(x,y,ShapeWater)
     if (sw) {
         swt=sw.water_type
     } else swt=""
+
+    buffer_range=0
+    repeat global.jump_buffering {
+        buffer_range+=gravity
+        buffer_range+=vspeed
+    }
 
     if (player_can_jump()
         || instance_place(x,y+vflip,Water1)
@@ -38,6 +44,8 @@ if (vvvvvv) {
             jump_timer=0
             onGround=false
             if (instance_place(x,y+1,GuyWater)) onfire=false
+    } else if (instance_place(x,y+buffer_range,Block) && vspeed>0) {
+        jump_timer=global.jump_buffering
     } else if (global.debug_jump
         || (djump<maxjumps || instance_place(x,y+1*vflip,Water2) || swt=="Water2")
         || infjump
@@ -53,6 +61,6 @@ if (vvvvvv) {
             trigger_broadcast(tr_playerdjump)
             coyoteTime=0
             jump_timer=0
-    } else jump_timer=global.jump_buffering
+    }
     ladderjump=false
 }

@@ -1116,6 +1116,18 @@ if (!dead) {
 
     if (global.debug_overlay) {
         draw_sprite_ext_fixed(mask_index,0,floor(x),floor(y)+(vflip==-1),image_xscale,image_yscale,image_angle,image_blend,image_alpha*0.5)
+        if (global.jump_buffering) {
+            var buffer_range,_left;
+            buffer_range=0
+            _left=bbox_left
+            repeat global.jump_buffering {
+                buffer_range+=gravity
+                buffer_range+=vspeed
+            }
+            if !facing {_left+=2}
+            buffer_range=floor(buffer_range)
+            draw_rectangle_color(_left,bbox_top+buffer_range,bbox_right,bbox_bottom+buffer_range,$ff00ff,$ff00ff,$ff00ff,$ff00ff,1)
+        }
     }
 }
 #define Trigger_Draw End
