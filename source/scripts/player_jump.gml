@@ -44,7 +44,7 @@ if (vvvvvv) {
             jump_timer=0
             onGround=false
             if (instance_place(x,y+1,GuyWater)) onfire=false
-    } else if (instance_place(x,y+buffer_range,Block) && vspeed>0) {
+    } else if (instance_place(x,y+buffer_range,Block) && vspeed>0 && !instance_place(x,y+buffer_range,PlayerKiller)) {
         jump_timer=global.jump_buffering
     } else if (global.debug_jump
         || (djump<maxjumps || instance_place(x,y+1*vflip,Water2) || swt=="Water2")
