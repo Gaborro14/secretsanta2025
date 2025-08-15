@@ -419,6 +419,7 @@ if (!frozen) {
     if (coyoteTime!=0) {
         if (global.coyote_time_floating) vspeed-=gravity
         coyoteTime-=1
+        if (instance_place(x,y+vflip,Block)) coyoteTime=global.coyote_time
     }
 }
 /*"/*'/**//* YYD ACTION
