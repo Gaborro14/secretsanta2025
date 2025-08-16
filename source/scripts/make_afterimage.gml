@@ -10,6 +10,7 @@ af.image_xscale=image_xscale
 af.image_yscale=image_yscale
 af.image_blend=image_blend
 af.depth=depth+0.1
+af.owner=id
 
 if (argument_count>0) af.image_alpha=argument[0]
 if (argument_count>1) af.alpha_reduction=argument[1]
