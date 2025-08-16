@@ -492,6 +492,7 @@
 	|Fader
 	|SoundEvent
 	|DialogEngine
+	|Afterimage
 |PlayerStart
 |Block
 |Platform

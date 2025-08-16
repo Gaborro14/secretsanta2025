@@ -356,3 +356,4 @@ vertex_helper_poscol
 draw_sprite_9slice
 ps2_9slice
 difficulty_is_impossible
+make_afterimage

@@ -290,6 +290,7 @@
 	|screen_fade
 	|create_collision_groups
 	|example_trap_script
+	|make_afterimage
 +avoidance/miku
 	|timeline_miku
 	|timeline_miku_front

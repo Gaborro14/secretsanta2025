@@ -38,6 +38,7 @@
 	|sprSpinnerHitbox
 	|sprCameraRoomViewer
 	|sprDefaultGameOverLine
+	|sprAfterimage
 +Player
 	|sprMaskPlayer
 	|sprMaskPlayerFlip
