@@ -15,6 +15,7 @@ drawangle=Player.drawangle
 
 hspeed=image_xscale*4
 
+image_xscale*=0.9
 image_yscale*=0.9
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -30,12 +31,13 @@ action_id=603
 applies_to=self
 */
 if (other.solid) {
-    move_player(x-hspeed,y,0)
+    move_player(x-hspeed,y-vspeed,0)
 
     with (Player) {
+        try_unstuck()
         djump=1
         vspeed=0
-        facing=other.image_xscale
+        facing=sign(other.image_xscale)
         vflip=other.vflip
     }
 
