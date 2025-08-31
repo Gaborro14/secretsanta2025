@@ -195,8 +195,8 @@ if (!global.release_mode) if (program_directory!=working_directory && string_pos
 }
 
 if (global.test_run) {
-    liveroom_start()
-    liveroom_add_obj_exclusion(PlayerStart)
+    test_room_start()
+    test_room_exclude_object(PlayerStart)
 }
 
 custom_init()
