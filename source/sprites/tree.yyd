@@ -442,3 +442,24 @@
 	|sprPlayerPortrait
 	|sprNpcPortrait
 	|sprNpc
++nbstage
+	|nbDown
+	|nbmDown
+	|nbLeft
+	|nbmLeft
+	|nbUp
+	|nbmUp
+	|nbRight
+	|nbmRight
+	|nbSquare
+	|nbmSquare
+	|nbCircle
+	|nbmCircle
+	|nbBlockh1
+	|nbBlockh2
+	|nbBlockh3
+	|nbBlockh4
+	|nbBlockv1
+	|nbBlockv2
+	|nbBlockv3
+	|nbBlockv4
