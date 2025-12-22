@@ -14,7 +14,7 @@
 global.release_mode=false
 
 //game properties
-    global.game_title="renex² engine"
+    global.game_title="Thank you for taking care of my home"
     //intended room speed
     //note: player always runs at 50hz! look in player step for an explanation
     global.game_speed=50
@@ -22,7 +22,7 @@ global.release_mode=false
     global.width=800
     global.height=608
     //first room that's actually part of the game
-    global.first_room=rmHub
+    global.first_room=rmStage1Template
     //room to return to when using WarpToHub object
     global.hub_room=rmHub
     //password for encrypting saves
@@ -49,10 +49,7 @@ global.release_mode=false
 
 //difficulties
     //difficulty options:
-    add_difficulty("Medium",true,false)
-    add_difficulty("Hard",false,false)
-    add_difficulty("Very Hard",false,false)
-    add_difficulty("Impossible",false,true)
+    add_difficulty("Hard",true,false)
 
     //you can replace these with bow/no bow for example, or even add more
     //there is a globalvar called "difficulty" that's automatically set for you
@@ -103,7 +100,7 @@ global.release_mode=false
     //let all saves work even while flipped the wrong way
     global.flip_saves=true
     //saves display the time they were first saved above them
-    global.idolmaster_saves=true
+    global.idolmaster_saves=false
     //save death & time stats in a .csv file in the save location
     //recommended to turn this off when publishing your game
     global.save_csv_stats=false
@@ -177,7 +174,7 @@ global.release_mode=false
     //2 - pause the level music immediately
     //3 - do nothing (music keeps playing)
     //4 - music slowdown
-    global.gameover_music=0
+    global.gameover_music=3
     //game over music filename
     //must be placed in the 'sounds' folder, but it functions as music ingame
     global.death_music="m-r-tight"
@@ -204,7 +201,7 @@ global.release_mode=false
     //1 - hard - always snap regardless of vertical movement, also snaps when near the top
     //2 - light - snaps only when near the top
     //3 - none - don't snap at all, act like one-way blocks
-    global.platform_snap_type=0
+    global.platform_snap_type=3
     //allows jumping while inside of platforms
     global.platform_swimming=true
     //disable weird keyboard quirks like cactusing or cancels

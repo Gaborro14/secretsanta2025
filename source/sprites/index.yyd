@@ -441,7 +441,7 @@ nbmDown
 nbmLeft
 nbmUp
 nbmRight
-nbmSquare
+
 nbCircle
 nbmCircle
 nbBlockh1
@@ -455,3 +455,4 @@ nbBlockv1
 nbBlockv2
 nbBlockv3
 nbBlockv4
+nbmSquare
