@@ -444,15 +444,27 @@ nbmRight
 
 nbCircle
 nbmCircle
-nbBlockh1
-nbBlockh2
-nbBlockh3
+
+
+
 nbBlockh4
-nbBlockv1
 
 
 
-nbBlockv2
-nbBlockv3
+
+
+
 nbBlockv4
 nbmSquare
+nbBlockhmv
+nbBlockvmv
+nbBlockEdge
+nbBlockhmvd
+nbBlockvmvd
+nnBlock
+nnUp
+
+nnRight
+nnDown
+nnLeft
+nnHitbox

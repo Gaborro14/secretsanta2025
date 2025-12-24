@@ -455,11 +455,17 @@
 	|nbmSquare
 	|nbCircle
 	|nbmCircle
-	|nbBlockh1
-	|nbBlockh2
-	|nbBlockh3
 	|nbBlockh4
-	|nbBlockv1
-	|nbBlockv2
-	|nbBlockv3
 	|nbBlockv4
+	|nbBlockhmv
+	|nbBlockvmv
+	|nbBlockhmvd
+	|nbBlockvmvd
+	|nbBlockEdge
++nanotech
+	|nnBlock
+	|nnUp
+	|nnRight
+	|nnDown
+	|nnLeft
+	|nnHitbox

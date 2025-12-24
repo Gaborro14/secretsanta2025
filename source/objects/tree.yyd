@@ -513,11 +513,26 @@
 	|onbmSquare
 	|onbCircle
 	|onbmCircle
-	|onbBlockh1
-	|onbBlockh2
-	|onbBlockh3
 	|onbBlockh4
-	|onbBlockv1
-	|onbBlockv2
-	|onbBlockv3
 	|onbBlockv4
+	|onbBlockhmv
+	|onbBlockvmv
+	|onbBlockhmvd
+	|onbBlockmaker2
+	|onbBlockkh
+	|onbBlockkv
+	|onbDownb
+	|onbLeftb
+	|onbUpb
+	|onbRightb
+	|onbSquareb
+	|onbCircleb
++nnstage
+	|onnBlock
+	|onnKillerParent
+	|onnUp
+	|onnRight
+	|onnDown
+	|onnLeft
+	|onnHitboxParent
+	|onnHitbox1

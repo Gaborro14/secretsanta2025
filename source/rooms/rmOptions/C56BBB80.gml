@@ -1,3 +1,3 @@
 //gm82 fields begin
-BGM="windside"
+BGM="title"
 //gm82 fields end

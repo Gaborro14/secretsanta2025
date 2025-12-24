@@ -14,7 +14,7 @@
 global.release_mode=false
 
 //game properties
-    global.game_title="Thank you for taking care of my home"
+    global.game_title="and I still can't make something that shows how much I care"
     //intended room speed
     //note: player always runs at 50hz! look in player step for an explanation
     global.game_speed=50
@@ -22,7 +22,7 @@ global.release_mode=false
     global.width=800
     global.height=608
     //first room that's actually part of the game
-    global.first_room=rmStage1Template
+    global.first_room=rnb01
     //room to return to when using WarpToHub object
     global.hub_room=rmHub
     //password for encrypting saves
@@ -96,9 +96,9 @@ global.release_mode=false
     //save automatically when touching saves
     global.contact_saves=false
     //press shoot to save when touching a save
-    global.press_shoot_saves=false
+    global.press_shoot_saves=true
     //let all saves work even while flipped the wrong way
-    global.flip_saves=true
+    global.flip_saves=false
     //saves display the time they were first saved above them
     global.idolmaster_saves=false
     //save death & time stats in a .csv file in the save location
@@ -139,7 +139,7 @@ global.release_mode=false
     //kill player when leaving the room region
     global.die_outside_room=true
     //also kill the player when leaving the room off the top
-    global.die_outside_top=false
+    global.die_outside_top=true
     //allow pressing A and D to move 1 pixel left and right to change your align
     //regardless of debug mode
     global.a_d_trick=false

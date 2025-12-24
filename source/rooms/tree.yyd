@@ -18,4 +18,10 @@
 		|rmShaders
 		|rmClear
 	|rmTemplate
-	|rmStage1Template
+	+nb
+		|rmStage1Template
+		|rnb01
+		|rnb02
+		|rnb03
+	+nn
+		|rmStage2Template
